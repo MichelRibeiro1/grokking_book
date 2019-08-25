@@ -1,17 +1,19 @@
-function binarySearch(list, item) {
-    const [low, high] = [0, list.length];
-    const middle = Math.floor(list.length / 2);
+function binarySearch(arr, item, high, low = 0) {
+    while (low <= high) {
+        const middle = Math.floor((high + low) / 2);
+        const guess = arr[middle];
+        if (item === guess) {
+            return guess;
+        }
+        if (guess < item) {
+            return binarySearch(arr, item, high, middle + 1);
+        }
 
-    if (item === list[middle]) {
-        return list[middle];
+        if (guess > item) {
+            return binarySearch(arr, item, middle - 1, low);
+        }
     }
-    if (list.length === 0) {
-        return null;
-    }
-    if (item > middle) {
-        return binarySearch(list.slice(middle + 1, high), item);
-    }
-    return binarySearch(list.slice(low, middle), item);
+    return -1;
 }
 
 module.exports = binarySearch;
