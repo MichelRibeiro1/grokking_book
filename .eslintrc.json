@@ -26,7 +26,8 @@
             "double"
         ],
         "no-else-return": "off",
-        "no-underscore-dangle": "off"
+        "no-underscore-dangle": "off",
+        "prefer-spread": "off"
     },
     "plugins": [
         "mocha"
