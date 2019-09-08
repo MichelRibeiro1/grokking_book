@@ -1,7 +1,7 @@
 const bfs = require("./bfs");
+const dijkstras = require("./dijkstra");
 
 function Graph() {
-    const inf = Infinity;
     this.vertices = {};
 
     this.addVertex = (name, edges) => {
@@ -9,6 +9,8 @@ function Graph() {
     };
 
     this.bfs = target => bfs(this.vertices, target);
+
+    this.dijkstras = target => dijkstras(this.vertices, target);
 }
 
 module.exports = Graph;

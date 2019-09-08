@@ -27,7 +27,8 @@
         ],
         "no-else-return": "off",
         "no-underscore-dangle": "off",
-        "prefer-spread": "off"
+        "prefer-spread": "off",
+        "no-loop-func": "off"
     },
     "plugins": [
         "mocha"
